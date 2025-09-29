@@ -6,7 +6,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "*.css",
+      "src": "*.css", 
       "use": "@vercel/static"
     },
     {
@@ -16,6 +16,10 @@
     {
       "src": "*.png",
       "use": "@vercel/static"
+    },
+    {
+      "src": "*.json",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -24,7 +28,7 @@
       "dest": "/index.html"
     },
     {
-      "src": "/(.*)",
+      "src": "/(.*)", 
       "dest": "/$1"
     }
   ]
