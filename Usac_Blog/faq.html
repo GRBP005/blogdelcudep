@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Blog Chats Privados</title>
+    <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">LOGO</div>
+            <nav>
+                <a href="index.html">Blog</a>
+                <a href="chats.html">Chats Privados</a>
+                <a href="faq.html" class="active">Sobre esta Web</a>
+            </nav>
+        </div>
+    </header>
+
+     <main class="container">
+        <section class="about-section">
+            <h2>Sobre esta Web</h2>
+            <div class="about-content">
+                <p>Esta página fue creada con el propósito de que el estudiantado pueda hablar libremente de lo que quiera, exponiendo a algún catedrático, algún acto que se está llevando a cabo dentro de la universidad o solamente ganas de chingar, sin miedo a represalias.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Tengo que registrarme para publicar en el blog?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, no necesitas registrarte. Puedes publicar de forma anónima y opcionalmente usar un apodo para identificarte.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Las publicaciones y chats se guardan para siempre?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Tanto las publicaciones como los mensajes de los chats privados se eliminan automáticamente después de 7 días.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo funcionan los chats privados?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Los chats privados se crean con una clave única. Solo las personas que tengan esa clave podrán unirse a la conversación.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Hay censura o moderación en los contenidos?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No hay censura previa, pero se pide respeto. En caso de reportes, la administración podrá eliminar publicaciones que incumplan las normas básicas de convivencia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Blog Chats Privados. Todos los derechos reservados.</p>
+    </footer>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="blog-firebase.js"></script>
+    <script src="script.js"></script>
+    <script src="faq.js"></script>
+</body>
+</html>

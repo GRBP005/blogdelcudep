@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats Privados - Blog Estudiantil</title>
+    <link rel="stylesheet" href="chats.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">LOGO</div>
+            <nav>
+                <a href="index.html">Blog</a>
+                <a href="Chats-Privs.html" class="active">Chats Privados</a>
+                <a href="faq.html">Sobre esta Web</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="chats-section">
+            <h2>Chats privados (crear / unirse)</h2>
+            
+            <div class="chats-container">
+                <!-- Formulario para crear sala -->
+                <div class="chat-form create-form">
+                    <h3>Crear nueva sala</h3>
+                    <div class="form-group">
+                        <label for="room-key">Clave de la sala (crea una)</label>
+                        <input type="text" id="room-key" placeholder="Ingresa una clave única...">
+                    </div>
+                    <button class="create-btn">Crear sala</button>
+                </div>
+
+                <!-- Separador -->
+                <div class="separator">
+                    <span>O</span>
+                </div>
+
+                <!-- Formulario para unirse a sala -->
+                <div class="chat-form join-form">
+                    <h3>Unirse a sala existente</h3>
+                    <div class="form-group">
+                        <label for="room-id">ID de sala</label>
+                        <input type="text" id="room-id" placeholder="Ingresa el ID de la sala...">
+                    </div>
+                    <div class="form-group">
+                        <label for="join-key">Clave</label>
+                        <input type="text" id="join-key" placeholder="Ingresa la clave de la sala...">
+                    </div>
+                    <button class="join-btn">Unirse</button>
+                </div>
+            </div>
+
+            <!-- Información adicional -->
+            <div class="info-box">
+                <h4>¿Cómo funcionan los chats privados?</h4>
+                <ul>
+                    <li>Crea una sala con una clave única y compártela con quienes quieras chatear</li>
+                    <li>Para unirte a una sala existente, necesitas el ID y la clave</li>
+                    <li>Los mensajes se eliminan automáticamente después de 7 días</li>
+                    <li>No se almacena información personal</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Blog Chats Privados. Todos los derechos reservados.</p>
+    </footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="chats.js"></script>
+</body>
+</html>

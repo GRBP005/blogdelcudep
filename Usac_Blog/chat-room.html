@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Chat - Blog Estudiantil</title>
+    <link rel="stylesheet" href="chat-styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">LOGO</div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="chats.html">Crear Chat</a>
+                <a href="faq.html">Preguntas Frecuentes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="chat-container">
+            <!-- Info de la sala -->
+            <div class="room-info">
+                <h2 id="room-name">Sala: <span id="room-id-display"></span></h2>
+                <button id="leave-room" class="leave-btn">Salir del Chat</button>
+            </div>
+
+            <!-- Mensajes -->
+            <div class="messages-container" id="messages-container">
+                <div class="welcome-message">
+                    <p>Bienvenido al chat. Los mensajes se eliminan después de 7 días.</p>
+                </div>
+            </div>
+
+            <!-- Formulario de mensaje -->
+            <div class="message-form">
+                <div class="input-group">
+                    <input type="text" id="user-name" placeholder="Tu nombre (opcional)" maxlength="20">
+                    <input type="text" id="message-input" placeholder="Escribe tu mensaje..." maxlength="500">
+                    <button id="send-btn">Enviar</button>
+                </div>
+                <div class="message-info">
+                    <span id="char-count">0/500 caracteres</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Blog Chats Privados. Todos los derechos reservados.</p>
+    </footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="chat-room.js"></script>
+</body>
+</html>

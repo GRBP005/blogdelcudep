@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Limpieza Manual</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        button { padding: 15px 30px; margin: 10px; font-size: 16px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .success { color: green; padding: 10px; background: #d4edda; border-radius: 5px; }
+        .error { color: red; padding: 10px; background: #f8d7da; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🧹 Limpieza Manual de Datos</h1>
+    <p>Elimina posts y mensajes de más de 7 días</p>
+    
+    <button onclick="cleanData()">🗑️ Ejecutar Limpieza</button>
+    <button onclick="checkData()">📊 Ver Datos Antiguos</button>
+    
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBlhSRpVGn4atwTjPHj854JNdchn7pOQlc",
+            authDomain: "blog-estudiantil-3ba42.firebaseapp.com",
+            projectId: "blog-estudiantil-3ba42",
+            storageBucket: "blog-estudiantil-3ba42.firebasestorage.app",
+            messagingSenderId: "262433106333",
+            appId: "1:262433106333:web:ee6808d1f6ec529e38e774"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        async function cleanData() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>🔄 Buscando datos antiguos...</p>';
+            
+            try {
+                const now = new Date();
+                const sevenDaysAgo = new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000));
+                
+                // Limpiar posts
+                const postsSnapshot = await db.collection('posts')
+                    .where('timestamp', '<', sevenDaysAgo)
+                    .get();
+                
+                const postBatch = db.batch();
+                postsSnapshot.forEach(doc => {
+                    postBatch.delete(doc.ref);
+                });
+                await postBatch.commit();
+                
+                // Limpiar mensajes
+                const messagesSnapshot = await db.collection('messages')
+                    .where('timestamp', '<', sevenDaysAgo)
+                    .get();
+                
+                const messageBatch = db.batch();
+                messagesSnapshot.forEach(doc => {
+                    messageBatch.delete(doc.ref);
+                });
+                await messageBatch.commit();
+                
+                resultDiv.innerHTML = `
+                    <div class="success">
+                        <h3>✅ ¡Limpieza Completada!</h3>
+                        <p>🗑️ <strong>${postsSnapshot.size}</strong> posts eliminados</p>
+                        <p>🗑️ <strong>${messagesSnapshot.size}</strong> mensajes eliminados</p>
+                        <p>⏰ Todos los datos de más de 7 días fueron removidos</p>
+                        <p><em>💡 Ejecuta esto una vez por semana</em></p>
+                    </div>
+                `;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error"><h3>❌ Error</h3><p>${error.message}</p></div>`;
+            }
+        }
+
+        async function checkData() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>🔍 Contando datos antiguos...</p>';
+            
+            try {
+                const now = new Date();
+                const sevenDaysAgo = new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000));
+                
+                const postsSnapshot = await db.collection('posts')
+                    .where('timestamp', '<', sevenDaysAgo)
+                    .get();
+                
+                const messagesSnapshot = await db.collection('messages')
+                    .where('timestamp', '<', sevenDaysAgo)
+                    .get();
+                
+                resultDiv.innerHTML = `
+                    <div>
+                        <h3>📊 Datos para Limpiar</h3>
+                        <p>📝 <strong>${postsSnapshot.size}</strong> posts de más de 7 días</p>
+                        <p>💬 <strong>${messagesSnapshot.size}</strong> mensajes de más de 7 días</p>
+                        ${postsSnapshot.size > 0 || messagesSnapshot.size > 0 ? 
+                            '<p style="color: #e74c3c;">⚠️ Recomendado ejecutar limpieza</p>' : 
+                            '<p style="color: #27ae60;">✅ No hay datos antiguos</p>'
+                        }
+                    </div>
+                `;
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error"><h3>❌ Error</h3><p>${error.message}</p></div>`;
+            }
+        }
+    </script>
+</body>
+</html>

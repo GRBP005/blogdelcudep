@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Blog del CUDEP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">LOGO</div>
+            <nav>
+                <a href="index.html" class="active">Blog</a>
+                <a href="chats.html">Chats Privados</a>
+                <a href="faq.html">Sobre esta Web</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="post-form-section">
+            <h2>Escribir publicación</h2>
+            <div class="form-group">
+                <label for="nickname">Apodo (opcional)</label>
+                <input type="text" id="nickname" placeholder="Tu apodo...">
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Escribe aquí tu publicación..."></textarea>
+            </div>
+            <button class="publish-btn">Publicar</button>
+            <p class="info-text">
+                ANTES DE PUBLICAR DEBES DE SABER:
+                <br>
+                1. Las publicaciones se eliminan automáticamente después de 7 días.
+                <br>
+                2. Tu mensaje no debe de contener más de 500 caracteres.
+            </p>
+        </section>
+
+        <section class="recent-posts-section">
+            <h2>Publicaciones recientes</h2>
+            <div class="posts-container">
+                <!-- Las publicaciones se agregarán aquí dinámicamente -->
+                <div class="no-posts">Aún no hay publicaciones. ¡Sé el primero en publicar!</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 El Blog del CUDEP-Blog-ChatsPrivados. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="blog-firebase.js"></script>
+    <script src="script.js"></script>
+
+    <!--
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🟥🟥⬜
+⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛🟥🟥🟥⬜
+⬜⬜⬜⬛🟩🟩🟩🟩🟩🟩⬛🟥🟥🟥
+⬜⬜🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+⬜⬛🟥🟥⬜⬜🟥🟥⬜⬜🟥🟥⬛🟥
+⬜⬛🟥🟥⬜⬛🟥🟥⬛⬜🟥🟥⬛⬜
+⬛⬛🟩⬛⬜⬛🟥🟥⬛⬜⬛🟩⬛⬛
+⬛🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩⬛
+⬛🟩🟩⬛🟩🟩🟩🟩🟩🟩⬛🟩🟩⬛
+⬛🟩🟩🟩⬛⬛⬛⬛⬛⬛🟩🟩🟩⬛
+⬜⬛🟩🟩⬛⬜⬜⬜⬜⬛🟩🟩⬛⬜
+⬜⬜⬛🟩🟩🟩🟩🟩🟩🟩🟩⬛⬜⬜
+⬜⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜
+    ARTE CREADO POR MI NO SOLO ESO SI NO LA PAGINA
+-->
+</body>
+</html>
