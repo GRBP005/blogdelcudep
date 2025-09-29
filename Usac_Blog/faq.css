@@ -1,3 +1,22 @@
+/* Agregar variables al inicio */
+:root {
+  --faq-bg: #ffffff;
+  --faq-border: #eee;
+}
+
+[data-theme="dark"] {
+  --faq-bg: #2d2d2d;
+  --faq-border: #404040;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--faq-border);
+}
+
+.faq-question:hover {
+  background-color: var(--border-color);
+}
+
 /* Estilos generales para FAQ */
 * {
     margin: 0;
