@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PWA Meta Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3498db">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Blog Estudiantil">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192x192.png.png">
+<link rel="apple-touch-icon" href="icon-192x192.png.png">
     <title>Sala de Chat - Blog Estudiantil</title>
     <link rel="stylesheet" href="chat-styles.css">
 </head>
@@ -10,7 +19,7 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <img src="logo.png" alt="Blog Estudiantil" class="logo-img">
+                <img src="imagenes/logo.png" alt="Blog Estudiantil" class="logo-img">
             </div>
             <nav>
                 <a href="index.html">Inicio</a>
@@ -55,7 +64,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="pwa.js"></script>
 <script src="chat-room.js"></script>
 </body>
 </html>
-
