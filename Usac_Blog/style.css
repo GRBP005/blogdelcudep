@@ -251,6 +251,70 @@ footer {
     margin-top: 30px;
 }
 
+/* ===== ESTILOS PWA ===== */
+.install-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: none; /* Oculto por defecto */
+}
+
+.install-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Modo oscuro */
+[data-theme="dark"] .install-btn {
+    background: #2980b9;
+}
+
+/* Offline indicator */
+.offline-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    z-index: 1001;
+    display: none;
+}
+
+body.offline .offline-indicator {
+    display: block;
+}
+
+/* Mejoras táctiles para PWA */
+@media (max-width: 768px) {
+    .install-btn {
+        bottom: 70px;
+        right: 15px;
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+    
+    /* Mejorar áreas táctiles */
+    button, .publish-btn, .create-btn, .join-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {
