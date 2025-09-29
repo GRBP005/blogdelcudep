@@ -77,9 +77,6 @@ class BlogFirebase {
                         <div class="post-date">${fecha}</div>
                     </div>
                     <div class="post-content">${this.escapeHtml(data.contenido)}</div>
-                    <div class="post-actions">
-                        <button class="like-btn">👍 ${data.likes || 0}</button>
-                    </div>
                 </div>
             `;
         });
