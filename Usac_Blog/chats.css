@@ -36,9 +36,14 @@ header {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #3498db;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px; /* Ajusta según tu imagen */
+    width: auto;
+    border-radius: 4px; /* Opcional */
 }
 
 header h1 {
